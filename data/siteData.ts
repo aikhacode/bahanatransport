@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Bahana Transport",
   description: "Rental Mobil Madiun, Sewa Hiace, dan Travel Madiun Surabaya terpercaya.",
-  url: "https://bahanatransport.com",
+  url: "https://bahanatransport.id",
   contact: {
     whatsapp: "628123456789",
     phone: "0812-3456-789",
