@@ -1,6 +1,9 @@
 import type {Metadata} from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { StickyMobileCTA } from '@/components/StickyMobileCTA';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -8,22 +11,21 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'BahanaMadiunTrans - Sewa Mobil Madiun Murah & Terpercaya',
-  description: 'Layanan sewa mobil profesional, murah, dan terpercaya di Madiun bersama BahanaMadiunTrans. Tersedia Innova Zenix, Avanza, Hiace, dan lainnya. Melayani lepas kunci atau dengan driver.',
+  title: 'Bahana Transport - Sewa Mobil Madiun Murah & Terpercaya',
+  description: 'Layanan sewa mobil profesional, murah, dan terpercaya di Madiun bersama Bahana Transport. Tersedia Innova Zenix, Avanza, Hiace, dan lainnya. Melayani dengan driver profesional.',
   keywords: [
     'sewa mobil madiun',
     'rental mobil madiun',
-    'bahanamadiuntrans',
-    'bahana madiun trans',
+    'bahanatransport',
+    'bahana transport madiun',
     'sewa mobil murah madiun',
-    'rental mobil madiun lepas kunci',
     'sewa hiace madiun',
     'sewa elf madiun',
     'sewa innova zenix madiun'
   ],
-  authors: [{ name: 'BahanaMadiunTrans' }],
-  creator: 'BahanaMadiunTrans',
-  publisher: 'BahanaMadiunTrans',
+  authors: [{ name: 'Bahana Transport' }],
+  creator: 'Bahana Transport',
+  publisher: 'Bahana Transport',
   formatDetection: {
     email: false,
     address: false,
@@ -33,16 +35,16 @@ export const metadata: Metadata = {
     canonical: 'https://bahanatransport.id',
   },
   openGraph: {
-    title: 'BahanaMadiunTrans - Sewa Mobil Madiun Murah & Terpercaya',
+    title: 'Bahana Transport - Sewa Mobil Madiun Murah & Terpercaya',
     description: 'Layanan sewa mobil profesional dan terpercaya di Madiun. Pilihan armada lengkap dan harga kompetitif.',
     url: 'https://bahanatransport.id',
-    siteName: 'BahanaMadiunTrans',
+    siteName: 'Bahana Transport',
     locale: 'id_ID',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BahanaMadiunTrans - Sewa Mobil Madiun Murah & Terpercaya',
+    title: 'Bahana Transport - Sewa Mobil Madiun Murah & Terpercaya',
     description: 'Layanan sewa mobil profesional dan terpercaya di Madiun. Pilihan armada lengkap.',
   },
   robots: {
@@ -61,23 +63,23 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "BahanaMadiunTrans",
+  "name": "Bahana Transport",
   "image": "https://bahanatransport.id/logo.png",
   "@id": "https://bahanatransport.id",
   "url": "https://bahanatransport.id",
   "telephone": "+6281215084257",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Jl. Raya Madiun",
+    "streetAddress": "Jl. Margobawero VA",
     "addressLocality": "Madiun",
     "addressRegion": "Jawa Timur",
-    "postalCode": "63121",
+    "postalCode": "63131",
     "addressCountry": "ID"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": -7.6298,
-    "longitude": 111.5239
+    "latitude": -7.6265606,
+    "longitude": 111.5213303
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -109,8 +111,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
         <meta name="google-site-verification" content="c7eJ-KiyTFFCrstUBbg5GYKPem4JumE59VXegUdQpt0" />
       </head>
-      <body className="font-sans antialiased text-slate-900 bg-gray-50" suppressHydrationWarning>
-        {children}
+      <body className="font-sans antialiased text-slate-900 bg-gray-50 flex flex-col min-h-screen" suppressHydrationWarning>
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+        <StickyMobileCTA />
       </body>
     </html>
   );

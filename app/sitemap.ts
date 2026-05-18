@@ -1,36 +1,20 @@
 import { MetadataRoute } from 'next'
+import { blogPosts, services } from '@/data/siteData'
+
+const baseUrl = 'https://bahanatransport.id'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://bahanatransport.id',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: 'https://bahanatransport.id/#armada',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://bahanatransport.id/#mengapa',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://bahanatransport.id/#area',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://bahanatransport.id/#faq',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ]
+  const routes = [
+    '',
+    '/blog',
+    ...services.map((s) => `/${s.slug}`),
+    ...blogPosts.map((p) => `/blog/${p.slug}`)
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: (route === '' ? 'weekly' : 'monthly') as "weekly" | "monthly",
+    priority: route === '' ? 1.0 : route.startsWith('/blog/') ? 0.6 : 0.8,
+  }))
+
+  return routes
 }
