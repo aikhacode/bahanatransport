@@ -3,8 +3,8 @@ export const siteConfig = {
   description: "Rental Mobil Madiun, Sewa Hiace, dan Travel Madiun Surabaya terpercaya.",
   url: "https://bahanatransport.id",
   contact: {
-    whatsapp: "628123456789",
-    phone: "0812-3456-789",
+    whatsapp: "6281215084257",
+    phone: "0812-1508-4257",
     address: "Jl. Margobawero VA, Madiun, Jawa Timur",
     email: "info@bahanatransport.id",
     gmaps: "https://www.google.com/maps/place/Bahana+Sewa+Mobil+Madiun/@-7.6267481,111.5212774,17z/data=!4m17!1m10!3m9!1s0x2e79be92b301476b:0x867fe0c3b221e38d!2sBahana+Sewa+Mobil+Madiun!8m2!3d-7.6265606!4d111.5213303!10e5!14m1!1BCgIgAQ!16s%2Fg%2F11f401fhpz!3m5!1s0x2e79be92b301476b:0x867fe0c3b221e38d!8m2!3d-7.6265606!4d111.5213303!16s%2Fg%2F11f401fhpz?entry=ttu"
@@ -28,7 +28,7 @@ export const fleets = [
   {
     id: "innova-reborn",
     name: "Innova Reborn",
-    image: "/innova-reborn-madiun1.jpg", 
+    image: "/innova-reborn-madiun1.jpg",
     price: 500000,
     features: ["7 Kursi", "Nyaman", "Premium", "Termasuk Sopir"],
     tags: ["rental mobil madiun", "carter mobil madiun"]
